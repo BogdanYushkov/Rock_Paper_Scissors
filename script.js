@@ -17,11 +17,21 @@ function playRound(ComputerChoice, PlayerChoice) {
     let lowerComputerChoise = ComputerChoice.toLocaleLowerCase();
     if (PlayerChoice == lowerComputerChoise) {
         return alert(`It's a draw, computer choise was ${ComputerChoice}`)
-    } else if (((PlayerChoice == "rock")&& (ComputerChoice =="Scissors")) || ((PlayerChoice == "paper") && (ComputerChoice =="Rock")) || ((PlayerChoice =="scissors")&&(ComputerChoice=="Paper"))){
-        return alert(`You win this round, computer choise was ${ComputerChoice}`)
+    } else if (((PlayerChoice == "rock")&& (ComputerChoice =="Scissors"))) {
+        return alert("You won. Rock beats Scissors")
+    } else if ((PlayerChoice == "paper") && (ComputerChoice =="Rock")) {
+        return alert("You won. Paper beats Rock")
+    } else if ((PlayerChoice =="scissors")&&(ComputerChoice=="Paper")){
+        return alert("You won. Scissors beats Paper")
     } else if (PlayerChoice == "Invalid Data, please enter your choice again"){
         alert("try again, enter valid data");
         playRound(getComputerChoice(), getPlayerChoice());
+    } else if ((PlayerChoice =="rock")&&(ComputerChoice=="Paper")) {
+        return alert("You lose. Paper beats Rock")
+    } else if ((PlayerChoice =="paper")&&(ComputerChoice=="Scissors")) {
+        return alert("You lose. Scissors beats Paper")
+    } else if ((PlayerChoice =="scissors")&&(ComputerChoice=="Rock")) {
+        return alert("You lose. Rock beats Scissors")
     } else {
         alert(`You lose, computer choise was ${ComputerChoice}`)
     }
